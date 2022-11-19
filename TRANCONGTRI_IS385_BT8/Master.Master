@@ -1,0 +1,110 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="TRANCONGTRI_IS385_BT8.Master" %>
+
+    <!DOCTYPE html>
+
+    <html>
+
+    <head runat="server">
+        <title></title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="/styles.css" rel="stylesheet" />
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+    </head>
+
+    <body>
+        <form id="form1" runat="server">
+
+            <header class="d-flex justify-content-center py-3">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <asp:HyperLink ID="HyperLink1" NavigateUrl="~/homepage.aspx" class="nav-link"
+                            aria-current="page" runat="server">Trang chủ</asp:HyperLink>
+                    </li>
+                    <li class="nav-item">
+                        <asp:HyperLink ID="HyperLink3" NavigateUrl="~/Gioithieu.aspx" class="nav-link" runat="server">
+                            Giới thiệu</asp:HyperLink>
+                    </li>
+                    <li class="nav-item">
+                        <asp:HyperLink ID="HyperLink4" NavigateUrl="~/giohang.aspx" class="nav-link"
+                            runat="server">Giỏ hàng</asp:HyperLink>
+                    </li>
+                    <li class="nav-item">
+                        <asp:HyperLink ID="HyperLink7" NavigateUrl="~/LienHe.aspx" class="nav-link" runat="server">Liên
+                            hệ</asp:HyperLink>
+                    </li>
+					<li class="nav-item">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Login
+</button>
+                    </li>
+                </ul>
+            </header>
+            <div class="content-wrapper">
+                <div class="col-12 col-xl-10">
+                    <asp:Image class="banner" ID="Image1" src="./assets/images/4_Pink.jpg" alt="" style="width: 100%" runat="server" />
+                </div>
+
+                <div class="col-12 col-xl-10">
+                    <div class="row content" style="margin-left: 0px; margin-right: 0px;">
+                        <div class="col-3 side-bar">
+                            <h2 class="product-type-title">Loại hàng</h2>
+                            <asp:DataList ID="loaihang" runat="server">
+                                <ItemTemplate>
+                                    <asp:LinkButton class="product-type-item" ID="LinkButton1" runat="server" Text='<%# Eval("tenloai") %>'
+                                        CommandArgument='<%# Eval("maloai") %>' OnClick="LinkButton1_Click">
+                                    </asp:LinkButton>
+                                </ItemTemplate>
+                            </asp:DataList>
+                        </div>
+                        <div class="col-9 content-container">
+
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                            </asp:ContentPlaceHolder>
+
+                        </div>
+                    </div>
+                </div>
+                <footer class="footer col-12 col-xl-10">
+                    <h4 class="footer-text">
+                        Thông tin bản quyền website
+                    </h4>
+                    <h4 class="footer-text">
+                        Trần Công Trí
+                    </h4>
+                </footer>
+            </div>
+			<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+		  <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate"></asp:Login>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+      </form>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/53662a567a.js" crossorigin="anonymous"></script>
+
+    </html>
