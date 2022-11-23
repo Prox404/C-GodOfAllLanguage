@@ -72,6 +72,8 @@
       <DependentUpon>banhang.mdf</DependentUpon>
     </Content>
     <Content Include="ChiTietSanPham.aspx" />
+    <Content Include="dangky.aspx" />
+    <Content Include="dangnhap.aspx" />
     <Content Include="giohang.aspx" />
     <Content Include="Global.asax" />
     <Content Include="homepage.aspx" />
@@ -86,6 +88,20 @@
     </Compile>
     <Compile Include="ChiTietSanPham.aspx.designer.cs">
       <DependentUpon>ChiTietSanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dangky.aspx.cs">
+      <DependentUpon>dangky.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dangky.aspx.designer.cs">
+      <DependentUpon>dangky.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dangnhap.aspx.cs">
+      <DependentUpon>dangnhap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dangnhap.aspx.designer.cs">
+      <DependentUpon>dangnhap.aspx</DependentUpon>
     </Compile>
     <Compile Include="giohang.aspx.cs">
       <DependentUpon>giohang.aspx</DependentUpon>

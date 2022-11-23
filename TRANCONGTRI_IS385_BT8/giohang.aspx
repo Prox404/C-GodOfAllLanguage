@@ -27,18 +27,18 @@
 								</div>
 								<div class="product-item-footer">
 									<div class="product-detail-quantity">
-										<asp:Button ID="Button1" class="quantity-btn" OnClick="Button1_Click"
-											runat="server" Text="-" />
+										<asp:LinkButton ID="Button1" class="quantity-btn" OnClick="Button1_Click"
+											runat="server" Text="-" CommandArgument='<%# Eval("mahang") %>' />
 										<asp:Label class="quantity-label" ID="Label4" runat="server"
 											Text='<%# Eval("soluong") %>'></asp:Label>
-										<asp:Button ID="Button2" class="quantity-btn" OnClick="Button2_Click"
-											runat="server" Text="+" />
+										<asp:LinkButton ID="Button2" class="quantity-btn" OnClick="Button2_Click"
+											runat="server" Text="+" CommandArgument='<%# Eval("mahang") %>' />
 									</div>
 									<asp:Label ID="total" class="product-detail-price" runat="server"
 										Text='<%# (Convert.ToInt32(Eval("soluong")) * Convert.ToInt32(Eval("dongia"))) %>'>
 									</asp:Label>
 									<asp:LinkButton ID="Button3" class="product-item-delete-btn" OnClick="Button3_Click"
-										runat="server">
+										runat="server" CommandArgument='<%# Eval("mahang") %>'>
 										<span class="fa-regular fa-trash-can"></span>
 									</asp:LinkButton>
 								</div>
@@ -59,7 +59,8 @@
 								<img src="./assets/images/discount.png" alt="discount"
 									class="product-item-discount-img">
 								<input type="text" class="product-item-discount-input" placeholder="Nhập mã giảm giá">
-									<p class="redeem-text" onclick="return alert('Thấy có mã giảm giá nên bấm thử chứ gì ?')">Đổi</p>
+								<p class="redeem-text"
+									onclick="return alert('Thấy có mã giảm giá nên bấm thử chứ gì ?')">Đổi</p>
 								</input>
 							</div>
 						</div>
@@ -79,7 +80,7 @@
 							</div>
 							<div class="d-flex flex-row justify-content-between mb-2 align-center">
 								<h5 class="mb-0">Khuyến mãi</h5>
-								<p class="price-text mb-0" > 0</p>
+								<p class="price-text mb-0"> 0</p>
 							</div>
 							<div class="d-flex flex-row justify-content-between mb-2 align-center">
 								<h5 class="mb-0">Tổng cộng</h5>
