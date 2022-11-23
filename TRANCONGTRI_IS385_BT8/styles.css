@@ -5,6 +5,15 @@
     font-family: 'Nunito', sans-serif;
 }
 
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover{
+    color: #000;
+}
+
 header {
     position: fixed;
     top: 0;
@@ -110,6 +119,8 @@ header {
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.06);
     transition: all 0.5s ease-in-out;
     border: none !important;
+    text-decoration: none !important;
+    color: #000 !important;
 }
 
 .product-card:hover{
@@ -127,8 +138,8 @@ header {
     transform: translateY(-10px);
 }
 
-.product-card:nth-child(2n+1){
-    margin-right: 10px;
+.product-card:not(:first-child){
+    margin-right: 20px;
 }
 
 .footer{
@@ -297,6 +308,8 @@ header {
     cursor: pointer;
     font-size: 1.2rem;
     font-weight: 700;
+    text-decoration: none;
+    color: #000;
 }
 
 
@@ -451,4 +464,68 @@ header {
 
 .product-item-discount-input:not(:placeholder-shown) + .redeem-text{
     display: block;
+}
+
+.modal-open {
+    overflow: scroll !important;
+    padding-right:0 !important;
+}
+
+.modal-auth-wrapper{
+    max-width: 877px;
+}
+
+.modal-auth-content{
+    background-color: #fff;
+    border-radius: 16px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: none;
+}
+
+.modal-auth-left{
+    position: relative;
+    padding: 50px 40px 40px 40px;
+}
+
+.btn-close-modal{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.text-cyan{
+    font-size: 19px;
+    line-height: 150%;
+    font-weight: 700;
+    color: rgba(6, 193, 212, 1);
+}
+.text-brand{
+    font-size: 19px;
+    color: rgba(43, 80, 192, 1);
+}
+
+.auth-banner{
+    border-radius: 0px 16px 16px 0px;
+}
+
+.login-wrapper{
+    background-color: rgba(236, 240, 244, 1);
+}
+
+.wrapper-centered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 25%);
+}
+
+.wrapper-centered .modal-auth-content{
+    width: 877px;
 }

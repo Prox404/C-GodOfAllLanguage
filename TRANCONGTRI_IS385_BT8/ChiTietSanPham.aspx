@@ -51,13 +51,12 @@
 									<asp:Button ID="Button2" class="quantity-btn" OnClick="Button2_Click" runat="server" Text="+" />
 								</div>
 							</div>
-							<asp:LinkButton class="btn btn-primary buy-btn" ID="LinkButton1" runat="server"
-								Text="Thêm vào giỏ hàng" CommandName="add" CommandArgument='<%# Eval("mahang") %>'>
+							<asp:LinkButton class="btn btn-primary buy-btn" OnClick="LinkButton1_Click" ID="LinkButton1" runat="server"
+								Text="Thêm vào giỏ hàng" CommandArgument='<%# Eval("mahang") %>'>
 							</asp:LinkButton>
 						</div>
 					</div>
 				</div>
 				</ItemTemplate>
 			</asp:DataList>
-
 	</asp:Content>
