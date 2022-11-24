@@ -137,21 +137,10 @@
 								</h5>
 								<asp:Label CssClass="form-label" ID="UserNameLabel1" runat="server" AssociatedControlID="TextBox1">UserName:</asp:Label>
 								<asp:TextBox CssClass="form-control" ID="TextBox1" runat="server"></asp:TextBox>
-								<div class="form-text">
-                                        <asp:RequiredFieldValidator ControlToValidate="TextBox1" Display="Dynamic"
-                                            ErrorMessage="UserName is required" ID="UserNameRequired" runat="server">
-                                            Nhập tên đăng nhập
-                                        </asp:RequiredFieldValidator>
-                                    </div>
+								
                                 <asp:Label CssClass="form-label" ID="PasswordLabel1" runat="server" AssociatedControlID="TextBox2">Password:</asp:Label>
 								<asp:TextBox CssClass="form-control" ID="TextBox2" TextMode="Password" runat="server"></asp:TextBox>
-								<div class="form-text">
-                                        <asp:RequiredFieldValidator ID="PasswordRequired" Display="Dynamic"
-                                            ControlToValidate="TextBox2" runat="server" ErrorMessage="Password Require"
-                                            ValidationGroup="register">
-                                            Nhập mật khẩu
-                                        </asp:RequiredFieldValidator>
-                                    </div>
+								
                                 <div class="form-text">
 									<asp:Label CssClass="text-danger" ID="Label1" runat="server" Text="ThisNoti"></asp:Label>
 

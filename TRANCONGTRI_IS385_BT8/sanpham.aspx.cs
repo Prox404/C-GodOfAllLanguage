@@ -50,7 +50,15 @@ namespace TRANCONGTRI_IS385_BT8
         protected void LinkButton2_Click(object sender, EventArgs e)
         {
             string mahang = ((LinkButton)sender).CommandArgument;
-            string tendangnhap = Request.Cookies["TenDN"].Value;
+            string tendangnhap = "";
+            try
+            {
+                tendangnhap = Request.Cookies["TenDN"].Value;
+            }
+            catch (System.Exception)
+            {
+				Response.Redirect("dangnhap.aspx");
+            }
 
             string sql = "select * from donhang where tendangnhap = '" + tendangnhap + "' and mahang = '" + mahang + "'";
             SqlConnection con = new SqlConnection(connect);
@@ -84,6 +92,32 @@ namespace TRANCONGTRI_IS385_BT8
                 con.Close();
             }
         }
+
+		protected void search_TextChanged(object sender, EventArgs e)
+		{
+			string q ;
+			
+			if (Context.Items["ml"] == null)
+                q = "select * from mathang where tenhang like '%" + search.Text + "%'";
+            else
+            {
+                string maloai = Context.Items["ml"].ToString();
+                q = "select * from mathang where maloai = '" + maloai + "' and tenhang like '%" + search.Text + "%'";
+            }
+			try
+			{
+				SqlDataAdapter da = new SqlDataAdapter(q, connect);
+				DataTable dt = new DataTable();
+				da.Fill(dt);
+				this.DataList1.DataSource = dt;
+				this.DataList1.DataBind();
+
+			}
+			catch (SqlException ex)
+			{
+				Response.Write(ex.Message);
+			}
+		}
     }
 
 }
